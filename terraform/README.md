@@ -51,3 +51,17 @@ You can also import directly into state using the CLI:
 terraform import cloudflare_worker.imported_worker <ACCOUNT_ID>/<WORKER_SCRIPT_NAME>
 ```
 
+---
+
+## Cloudflare Zero Trust Gateway Resources
+
+The configuration in `gateway.tf` manages:
+
+1. **DNS Location (`Managua`)**:
+   - Manages DoH, DoT, IPv4/IPv6 destination endpoints.
+   - Sets `require_token = false` on DoH, enabling external DoH clients (such as TrackerControl on Android or roaming devices) to query without being refused.
+2. **Gateway Policy (`CGPS Filter Lists`)**:
+   - Manages the DNS firewall rule created for Pi-hole blocking.
+   - Uses `lifecycle { ignore_changes = [traffic] }` so automated script updates (`node cf_gateway_rule_create.js`) do not cause state drift.
+
+
