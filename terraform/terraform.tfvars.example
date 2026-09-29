@@ -1,0 +1,4 @@
+# Cloudflare credentials and Worker configuration
+cloudflare_api_token  = "your_cloudflare_api_token"
+cloudflare_account_id = "a9244ae402534aaaed2072748a928351"
+worker_script_name    = "your-worker-name"
