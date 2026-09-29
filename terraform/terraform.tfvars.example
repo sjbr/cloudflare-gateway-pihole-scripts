@@ -1,4 +1,7 @@
 # Cloudflare credentials and Worker configuration
 cloudflare_api_token  = "your_cloudflare_api_token"
 cloudflare_account_id = "a9244ae402534aaaed2072748a928351"
-worker_script_name    = "your-worker-name"
+cloudflare_zone_id    = "4f455953dacca24e5aa9f813e73d0d71"
+worker_script_name    = "serverless-dns"
+domain_name           = "adeptsys.uk"
+subdomain             = "dns"

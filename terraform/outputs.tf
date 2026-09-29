@@ -12,3 +12,8 @@ output "subdomain_enabled" {
   description = "Whether the worker subdomain is enabled"
   value       = cloudflare_worker.imported_worker.subdomain.enabled
 }
+
+output "worker_custom_domain" {
+  description = "The custom domain hostname routed to the Worker"
+  value       = cloudflare_workers_custom_domain.worker_domain.hostname
+}
